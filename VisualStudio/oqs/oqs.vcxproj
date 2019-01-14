@@ -31,6 +31,10 @@
     <ClInclude Include="..\..\src\kex_code_mcbits\mcbits.h" />
     <ClInclude Include="..\..\src\kex_lwe_frodo\kex_lwe_frodo.h" />
     <ClInclude Include="..\..\src\kex_lwe_frodo\local.h" />
+    <ClInclude Include="..\..\src\kex_lwe_okcn\kex_lwe_okcn.h" />
+    <ClInclude Include="..\..\src\kex_lwe_okcn\local.h" />
+    <ClInclude Include="..\..\src\kex_lwr_okcn\kex_lwr_okcn.h" />
+    <ClInclude Include="..\..\src\kex_lwr_okcn\local.h" />
     <ClInclude Include="..\..\src\kex_ntru\kex_ntru.h" />
     <ClInclude Include="..\..\src\kex_rlwe_bcns15\kex_rlwe_bcns15.h" />
     <ClInclude Include="..\..\src\kex_rlwe_bcns15\local.h" />
@@ -41,6 +45,10 @@
     <ClInclude Include="..\..\src\kex_rlwe_msrln16\kex_rlwe_msrln16.h" />
     <ClInclude Include="..\..\src\kex_rlwe_msrln16\LatticeCrypto.h" />
     <ClInclude Include="..\..\src\kex_rlwe_msrln16\LatticeCrypto_priv.h" />
+    <ClInclude Include="..\..\src\kex_rlwe_newhope_simple\kex_rlwe_newhope_simple.h" />
+    <ClInclude Include="..\..\src\kex_rlwe_newhope_simple\params.h" />
+    <ClInclude Include="..\..\src\kex_rlwe_zarzar\kex_rlwe_zarzar.h" />
+    <ClInclude Include="..\..\src\kex_rlwe_zarzar\params.h" />
     <ClInclude Include="..\..\src\kex_sidh_cln16\kex_sidh_cln16.h" />
     <ClInclude Include="..\..\src\kex_sidh_cln16\SIDH.h" />
     <ClInclude Include="..\..\src\kex_sidh_cln16\SIDH_internal.h" />
@@ -60,6 +68,11 @@
     <ClCompile Include="..\..\src\kex_lwe_frodo\kex_lwe_frodo.c" />
     <ClCompile Include="..\..\src\kex_lwe_frodo\lwe.c" />
     <ClCompile Include="..\..\src\kex_lwe_frodo\lwe_noise.c" />
+    <ClCompile Include="..\..\src\kex_lwe_okcn\kex_lwe_okcn.c" />
+    <ClCompile Include="..\..\src\kex_lwe_okcn\local.c" />
+    <ClCompile Include="..\..\src\kex_lwr_okcn\kex_lwr_okcn.c" />
+    <ClCompile Include="..\..\src\kex_lwr_okcn\lwr.c" />
+    <ClCompile Include="..\..\src\kex_lwr_okcn\lwr_noise.c" />
     <ClCompile Include="..\..\src\kex_ntru\kex_ntru.c" />
     <ClCompile Include="..\..\src\kex_rlwe_bcns15\fft.c" />
     <ClCompile Include="..\..\src\kex_rlwe_bcns15\kex_rlwe_bcns15.c" />
@@ -70,6 +83,14 @@
     <ClCompile Include="..\..\src\kex_rlwe_msrln16\kex_rlwe_msrln16.c" />
     <ClCompile Include="..\..\src\kex_rlwe_msrln16\LatticeCrypto_kex.c" />
     <ClCompile Include="..\..\src\kex_rlwe_msrln16\ntt_constants.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\kex_rlwe_newhope_simple.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\newhope_simple.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\poly.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\precomp.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\kex_rlwe_zarzar.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\poly.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\precomp.c" />
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\zarzar.c" />
     <ClCompile Include="..\..\src\kex_sidh_cln16\ec_isogeny.c" />
     <ClCompile Include="..\..\src\kex_sidh_cln16\fpx.c" />
     <ClCompile Include="..\..\src\kex_sidh_cln16\kex_sidh_cln16.c" />
@@ -77,6 +98,15 @@
     <ClCompile Include="..\..\src\kex_sidh_cln16\sidh_kex.c" />
     <ClCompile Include="..\..\src\kex_sidh_cln16\SIDH_setup.c" />
     <ClCompile Include="..\..\src\kex_sidh_cln16\validate.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\kex_lwe_okcn\Makefile.am" />
+    <None Include="..\..\src\kex_lwr_okcn\Makefile.am" />
+    <None Include="..\..\src\kex_rlwe_newhope_simple\Makefile.am" />
+    <None Include="..\..\src\kex_rlwe_zarzar\Makefile.am" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\src\kex_rlwe_newhope_simple\LICENSE.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{DCFEFB81-4696-45D2-9FCA-351CCFC13C74}</ProjectGuid>
@@ -176,9 +206,9 @@ copy "$(SolutionDir)..\src\kex_ntru\kex_ntru.h" "$(SolutionDir)include\oqs\"</Co
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>OQS_RAND_DEFAULT_URANDOM_CHACHA20;OQS_KEX_DEFAULT_BCNS15;CONSTANT_TIME;WINDOWS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OQS_RAND_DEFAULT_URANDOM_CHACHA20;OQS_KEX_DEFAULT_BCNS15;CONSTANT_TIME;WINDOWS;_DEBUG;_LIB;ENABLE_CODE_MCBITS;SODIUM_STATIC;ENABLE_NTRU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>false</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andy\Desktop\work\项目\国家密码竞赛\NTRUEncrypt\include;C:\Users\Andy\Desktop\work\项目\国家密码竞赛\libsodium\src\libsodium\include;$(SolutionDir)include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -274,7 +304,15 @@ copy "$(SolutionDir)..\src\kex_rlwe_msrln16\kex_rlwe_msrln16.h" "$(SolutionDir)i
 copy "$(SolutionDir)..\src\kex_lwe_frodo\kex_lwe_frodo.h" "$(SolutionDir)include\oqs\"
 copy "$(SolutionDir)..\src\kex_sidh_cln16\kex_sidh_cln16.h" "$(SolutionDir)include\oqs\"
 copy "$(SolutionDir)..\src\kex_code_mcbits\kex_code_mcbits.h" "$(SolutionDir)include\oqs\"
-copy "$(SolutionDir)..\src\kex_ntru\kex_ntru.h" "$(SolutionDir)include\oqs\"</Command>
+copy "$(SolutionDir)..\src\kex_ntru\kex_ntru.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_lwe_okcn\kex_lwe_okcn.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_lwe_okcn\local.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_lwr_okcn\kex_lwr_okcn.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_lwr_okcn\local.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_rlwe_newhope_simple\kex_rlwe_newhope_simple.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_rlwe_newhope_simple\params.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_rlwe_zarzar\kex_rlwe_zarzar.h" "$(SolutionDir)include\oqs\"
+copy "$(SolutionDir)..\src\kex_rlwe_zarzar\params.h" "$(SolutionDir)include\oqs\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

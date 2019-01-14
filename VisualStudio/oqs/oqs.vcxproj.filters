@@ -94,6 +94,45 @@
     <ClCompile Include="..\..\src\kex_ntru\kex_ntru.c">
       <Filter>KEX_NTRU</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\kex_lwe_okcn\kex_lwe_okcn.c">
+      <Filter>KEX_LWE_OKCN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_lwr_okcn\kex_lwr_okcn.c">
+      <Filter>KEX_LWR_OKCN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_lwr_okcn\lwr.c">
+      <Filter>KEX_LWR_OKCN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_lwr_okcn\lwr_noise.c">
+      <Filter>KEX_LWR_OKCN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\kex_rlwe_newhope_simple.c">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\newhope_simple.c">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\poly.c">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_newhope_simple\precomp.c">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\kex_rlwe_zarzar.c">
+      <Filter>KEX_Zarzar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\poly.c">
+      <Filter>KEX_Zarzar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\precomp.c">
+      <Filter>KEX_Zarzar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_rlwe_zarzar\zarzar.c">
+      <Filter>KEX_Zarzar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\kex_lwe_okcn\local.c">
+      <Filter>KEX_LWE_OKCN</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\kex_lwe_frodo\kex_lwe_frodo.h">
@@ -171,6 +210,30 @@
     <ClInclude Include="..\..\src\kex_ntru\kex_ntru.h">
       <Filter>KEX_NTRU</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\kex_lwe_okcn\kex_lwe_okcn.h">
+      <Filter>KEX_LWE_OKCN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\kex_lwe_okcn\local.h">
+      <Filter>KEX_LWE_OKCN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\kex_lwr_okcn\kex_lwr_okcn.h">
+      <Filter>KEX_LWR_OKCN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\kex_lwr_okcn\local.h">
+      <Filter>KEX_LWR_OKCN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\kex_rlwe_newhope_simple\kex_rlwe_newhope_simple.h">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\kex_rlwe_newhope_simple\params.h">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\kex_rlwe_zarzar\kex_rlwe_zarzar.h">
+      <Filter>KEX_Zarzar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\kex_rlwe_zarzar\params.h">
+      <Filter>KEX_Zarzar</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -212,5 +275,36 @@
     <Filter Include="KEX_NTRU">
       <UniqueIdentifier>{f2432c4a-5195-4990-af30-65a61bf36897}</UniqueIdentifier>
     </Filter>
+    <Filter Include="KEX_LWE_OKCN">
+      <UniqueIdentifier>{b8306e48-2703-47f4-8d71-71877e27e988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KEX_LWR_OKCN">
+      <UniqueIdentifier>{e34582b5-71a9-42dd-bd6e-0e712f3058f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KEX_NewHope_Simple">
+      <UniqueIdentifier>{1b98d7e1-df0a-44f1-9f3e-a387c49d5c1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KEX_Zarzar">
+      <UniqueIdentifier>{230cd55a-495c-43fc-aa7d-c2184f17be87}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\kex_lwe_okcn\Makefile.am">
+      <Filter>KEX_LWE_OKCN</Filter>
+    </None>
+    <None Include="..\..\src\kex_lwr_okcn\Makefile.am">
+      <Filter>KEX_LWR_OKCN</Filter>
+    </None>
+    <None Include="..\..\src\kex_rlwe_newhope_simple\Makefile.am">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </None>
+    <None Include="..\..\src\kex_rlwe_zarzar\Makefile.am">
+      <Filter>KEX_Zarzar</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\src\kex_rlwe_newhope_simple\LICENSE.txt">
+      <Filter>KEX_NewHope_Simple</Filter>
+    </Text>
   </ItemGroup>
 </Project>

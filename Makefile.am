@@ -36,7 +36,7 @@ if USE_SIDH_IQC
 liboqs_la_LIBADD += src/kex_sidh_iqc_ref/libsidhiqc.la
 endif
 
-noinst_bin_PROGRAMS = test_rand test_kex test_aes
+noinst_bin_PROGRAMS = test_rand test_kex test_aes kex_api_test
 noinst_bindir=$(prefix)/tests
 test_kex_LDADD =  liboqs.la -lm
 test_kex_SOURCES = src/kex/test_kex.c
@@ -51,6 +51,11 @@ endif
 if USE_SIDH_IQC
 test_kex_LDADD += -lgmp
 endif
+
+kex_api_test_LDADD = liboqs.la -lm
+kex_api_test_SOURCES = src/kex_api/kex_api.c
+kex_api_test_CPPFLAGS = -I./include
+kex_api_test_CPPFLAGS += $(AM_CPPFLAGS)
 
 test_aes_LDADD =  liboqs.la -lm
 test_aes_SOURCES = src/crypto/aes/test_aes.c
@@ -95,6 +100,7 @@ links:
 	$(LN_S) -f ../../src/crypto/aes/aes.h include/oqs
 	$(LN_S) -f ../../src/crypto/sha3/sha3.h include/oqs
 	$(LN_S) -f ../../src/kex/kex.h include/oqs
+	$(LN_S) -f ../../src/kex_api/kex_api.h include/oqs
 	$(LN_S) -f ../../src/crypto/rand/rand.h include/oqs
 	$(LN_S) -f ../../src/crypto/rand_urandom_chacha20/rand_urandom_chacha20.h include/oqs
 	$(LN_S) -f ../../src/crypto/rand_urandom_aesctr/rand_urandom_aesctr.h include/oqs

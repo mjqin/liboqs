@@ -109,9 +109,9 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;_DEBUG;_CONSOLE;ENABLE_CODE_MCBITS;SODIUM_STATIC;ENABLE_NTRU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andy\Desktop\work\项目\国家密码竞赛\libsodium\src\libsodium\include;C:\Users\Andy\Desktop\work\项目\国家密码竞赛\NTRUEncrypt\include;$(SolutionDir)include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>

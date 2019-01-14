@@ -155,7 +155,7 @@ static void poly_uniform(poly *a, const unsigned char *seed) {
 	uint16_t val;
 	uint64_t state[OQS_SHA3_STATESIZE];
 	unsigned int nblocks = 8;
-	uint8_t buf[OQS_SHA3_SHAKE128_RATE * nblocks];
+	uint8_t buf[OQS_SHA3_SHAKE128_RATE * 8];
 
 	OQS_SHA3_shake128_absorb(state, seed, ZARZAR_SEEDBYTES);
 
