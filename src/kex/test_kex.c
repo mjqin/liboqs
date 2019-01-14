@@ -164,13 +164,11 @@ static int kex_test_correctness_wrapper(OQS_RAND *rand, enum OQS_KEX_alg_name al
 	for (int i = 0; i < 256; i++) {
 		occurrences[i] = 0;
 	}
-
 	if (quiet) {
 		ret = kex_test_correctness(rand, alg_name, seed, seed_len, named_parameters, 0, occurrences);
 	} else {
 		ret = kex_test_correctness(rand, alg_name, seed, seed_len, named_parameters, 1, occurrences);
 	}
-
 	if (ret != 1) {
 		goto err;
 	}
